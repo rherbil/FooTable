@@ -54,6 +54,7 @@
 		if (F.is.element(valueOrElement) || F.is.jq(valueOrElement)) return $(valueOrElement).data('sortValue') || this.parser(valueOrElement);
 		// if options are supplied with the value
 		if (F.is.hash(valueOrElement) && F.is.hash(valueOrElement.options)){
+			if (F.is.number(valueOrElement.options.sortValue)) return valueOrElement.options.sortValue;
 			if (F.is.string(valueOrElement.options.sortValue)) return valueOrElement.options.sortValue;
 			if (F.is.defined(valueOrElement.value)) valueOrElement = valueOrElement.value;
 		}
